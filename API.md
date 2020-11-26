@@ -20,3 +20,5 @@
     1. `JCAL`
     1. `utils`
     1. `measurements`
+1. Glosario de simbolos
+1. Referencias Bibliograficas
