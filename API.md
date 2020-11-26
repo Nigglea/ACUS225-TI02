@@ -3,7 +3,8 @@
 ### Docente: Dr. Rodolfo Venegas
 ### Alumno: Diego Espejo
 
-
+***
+***
 
 ## Indice 
 1. Introducción
