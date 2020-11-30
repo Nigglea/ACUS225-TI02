@@ -77,11 +77,11 @@
 
 | Impedancias | Descripción |
 |---------|-------------|
-| ZE(w,Re,Le,f_s,BL,RMS,QMS) | Impedancia electrica a partir de parametros TS |
-| Z_MD(w,R_ms,M_md,C_ms) | Impedancia mecanica de radiación |
-| Z_r(k0,Z0,a) | Impedancia de radiación |
-| Z_ab(Z0,k0,kc,lx,ly,lz,d,Zc=None,poro=False) | Impedancia acústica de la caja |
-| Z_e(Z_E,BL,Z_MD,SD,Z_AB,Z_r) | Impedancia electrica a partir de las otras impedancias |
+| `ZE(w,Re,Le,f_s,BL,RMS,QMS)` | Impedancia electrica a partir de parametros TS |
+| `Z_MD(w,R_ms,M_md,C_ms)` | Impedancia mecanica de radiación |
+| `Z_r(k0,Z0,a)` | Impedancia de radiación |
+| `Z_ab(Z0,k0,kc,lx,ly,lz,d,Zc=None,poro=False)` | Impedancia acústica de la caja |
+| `Z_e(w,Le,Re,BL,Z_MD,SD,Z_AB,Z_r)` | Impedancia electrica a partir de las otras impedancias |
 
 
 
