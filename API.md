@@ -49,27 +49,28 @@
 
 ### `main`
 
-|```class closed_box_simple:```| |
+|```class closed_box_simple:```| Descripción |
 |----------------------------------|-|
-|``` __init__(self,df)```| |
-|```parametros_TS(self,Qtc=0.7071)``` | |
-|```dimensiones(self,d=None)``` | |
-|``` impedancias(self)```| |
-|```NPS_m(self,r=1)```| |
+|``` __init__(self,df)```| Inicialización de datos de altavoz. |
+|```parametros_TS(self,Qtc=0.7071)``` | Extracción de parametros de Thiele-Small. |
+|```dimensiones(self,d=None)``` | Definición de dimensiones de la caja cerrada. |
+|``` impedancias(self)```| Calculo de impedancias |
+|```NPS_m(self,r=1)```| Estimación de Nivel de presión sonora, por defecto a 1 metro |
 
 
-|```class closed_box```| |
-|----------------------|-|
-|```__init__(self,df,phi,kappa0,theta0,alpha,lambda_ups,lambda_t)```| |
-|```parametros_TS(self,Qtc=0.7071)```| |
-|```dimensiones(self,d=None)```| |
-|```JCAL(self)```| |
-|```impedancias(self)```| |
-|```NPS_m(self,r=1)```| |
+|```class closed_box```| Descripción |
+|----------------------|-------------|
+|```__init__(self,df,phi,kappa0,theta0,alpha,lambda_ups,lambda_t)```| Inicialización de datos de altavoz y parametros de material porosos. |
+|```parametros_TS(self,Qtc=0.7071)```| Extracción de parametros de Thiele-Small. |
+|```dimensiones(self,d=None)```| Definición de dimensiones de la caja cerrada. |
+|```JCAL(self)```| Consideración de material poroso mediante metodo JCAL  |
+|```impedancias(self)```| Calculo de impedancias |
+|```NPS_m(self,r=1)```| Estimación de Nivel de presión sonora, por defecto a 1 metro |
 
-| | |
-|--------|-|
-|```dataset(xls="Dataset_VituixCaD.xls")```| |
+
+| Función | Descripción |
+|---------|-------------|
+|```dataset(xls="Dataset_VituixCaD.xls")```| Lectura de base de datos |
 
 ## Referencias Bibliograficas
 
