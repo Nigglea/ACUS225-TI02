@@ -84,7 +84,18 @@
 | `Z_e(w,Le,Re,BL,Z_MD,SD,Z_AB,Z_r)` | Impedancia electrica a partir de las otras impedancias |
 
 
-
+| Otros | Descripción |
+|---------|-------------|
+| `u_hat_c(p_out6,Z_AB)` | Velocidad de volumen |
+| `u_hat_ref(w,eg,BL,Sd,Mms,Re)` | Velocidad de volumen referencial |
+| `p_hat(w,u_hat_c,Vb,r)` | Presion sonora en campo lejano a distancia r |
+| `Bl(Re,ws,Qes,Qms)` | Producto entre la densidad de flujo magnetico y la longitud del cable mediante parametros TS |
+| `a(Sd)` | Radio efectivo del diafragma |
+| `RMS(BL,QES,RE,QMS)` |  |
+| `MMD(MMS,a)` | Masa mecanica del diafragma |
+| `Vb(Vas,Qtc,Qts)` |  |
+| `p_out(w,Sd,BL,Z_e,Z_MD,Z_ab,Z_r,r=1)` | Presión de salida de la caja acústica |
+| `NPS_pref(w,u_hat_ref,r=1,pref=20e-6)` | Nivel de presion sonora de referencia |
 
 ## Referencias Bibliograficas
 
