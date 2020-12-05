@@ -128,6 +128,10 @@
 | `parametros_TS(imped_elec_mag,frecuency,f_s,f_1,f_2,Q,r_e,LE,masa)` | Parametros Thiele-Small mediante valores de medicion de impedancia |
 
 
+## Glosario de simbolos
+
+$\omega$
+
 ## Referencias Bibliograficas
 
 1. Beranek, L. L., & Mellow, T. (2012). Acoustics: sound fields and transducers. Academic Press.
