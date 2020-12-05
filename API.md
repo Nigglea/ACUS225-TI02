@@ -26,7 +26,7 @@
     1. `closed_box`
     1. `JCAL`
     1. `utils`
-    1. `measurements`
+    1. `mediciones`
 1. Glosario de simbolos
 1. Referencias Bibliograficas
 
@@ -108,6 +108,16 @@
 | `Z_c(w,kappa_omega,C_omega)` | Impedancia caracteristica. |
 | `c_w(w,kappa_omega,C_omega` | Velocidad del sonido del material poroso. |
 | `k_c(w,c_w)` | Numero de onda en el material poroso. |
+
+### `mediciones`
+
+| Funcion | Descripción |
+|---------|-------------|
+| `extraer_mediciones(filename)` | Extracción de datos de medicion de impedancia |
+| `resonancia(data,mag_impedancia)` | Frecuencia y valor de resonancia mediante valores de impedancia |
+| `bandwith(mag_impedancia,frecuency,threshold=12)` | Ancho de banda de la frecuencia de sampleo |
+| `parametros_TS(imped_elec_mag,frecuency,f_s,f_1,f_2,Q,r_e,LE,masa)` | Parametros Thiele-Small mediante valores de medicion de impedancia |
+
 
 ## Referencias Bibliograficas
 
