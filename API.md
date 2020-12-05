@@ -91,9 +91,9 @@
 | `p_hat(w,u_hat_c,Vb,r)` | Presion sonora en campo lejano a distancia r |
 | `Bl(Re,ws,Qes,Qms)` | Producto entre la densidad de flujo magnetico y la longitud del cable mediante parametros TS |
 | `a(Sd)` | Radio efectivo del diafragma |
-| `RMS(BL,QES,RE,QMS)` |  |
+| `RMS(BL,QES,RE,QMS)` | Resistencia mecanica de la suspensión |
 | `MMD(MMS,a)` | Masa mecanica del diafragma |
-| `Vb(Vas,Qtc,Qts)` |  |
+| `Vb(Vas,Qtc,Qts)` | Volumen de la caja |
 | `p_out(w,Sd,BL,Z_e,Z_MD,Z_ab,Z_r,r=1)` | Presión de salida de la caja acústica |
 | `NPS_pref(w,u_hat_ref,r=1,pref=20e-6)` | Nivel de presion sonora de referencia |
 
