@@ -99,7 +99,7 @@
 
 ### `JCAL`
 
-| Funcion | Descripción |
+| Función | Descripción |
 |---------|-------------|
 | `X_Omega(w,X0,w_bar,M)` | Función de escalamiento. |
 | `kappa_omega(w,phi,kappa0,alpha,lambda_ups)` | Permeabilidad dinamica viscosa. |
@@ -109,9 +109,18 @@
 | `c_w(w,kappa_omega,C_omega` | Velocidad del sonido del material poroso. |
 | `k_c(w,c_w)` | Numero de onda en el material poroso. |
 
+### `utils`
+
+| Función | Descripción |
+|---------|-------------|
+| `k0(w)` | Numero de onda en el aire |
+| `Z0()` | Impedancia caracteristica del aire |
+| `NPS(p,pref=20e-6)` | Nivel de presión sonora |
+
+
 ### `mediciones`
 
-| Funcion | Descripción |
+| Función | Descripción |
 |---------|-------------|
 | `extraer_mediciones(filename)` | Extracción de datos de medicion de impedancia |
 | `resonancia(data,mag_impedancia)` | Frecuencia y valor de resonancia mediante valores de impedancia |
