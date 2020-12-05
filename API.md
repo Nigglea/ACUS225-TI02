@@ -63,39 +63,51 @@
 |```__init__(self,df,phi,kappa0,theta0,alpha,lambda_ups,lambda_t)```| Inicialización de datos de altavoz y parametros de material porosos. |
 |```parametros_TS(self,Qtc=0.7071)```| Extracción de parametros de Thiele-Small. |
 |```dimensiones(self,d=None)```| Definición de dimensiones de la caja cerrada. |
-|```JCAL(self)```| Consideración de material poroso mediante metodo JCAL  |
-|```impedancias(self)```| Calculo de impedancias |
-|```NPS_m(self,r=1)```| Estimación de Nivel de presión sonora, por defecto a 1 metro |
+|```JCAL(self)```| Consideración de material poroso mediante metodo JCAL.  |
+|```impedancias(self)```| Calculo de impedancias. |
+|```NPS_m(self,r=1)```| Estimación de Nivel de presión sonora, por defecto a 1 metro. |
 
 
 | Función | Descripción |
 |---------|-------------|
-|```dataset(xls="Dataset_VituixCaD.xls")```| Lectura de base de datos |
+|```dataset(xls="Dataset_VituixCaD.xls")```| Lectura de base de datos. |
 
 
 ### `closed_box`
 
 | Impedancias | Descripción |
 |---------|-------------|
-| `ZE(w,Re,Le,f_s,BL,RMS,QMS)` | Impedancia electrica a partir de parametros TS |
-| `Z_MD(w,R_ms,M_md,C_ms)` | Impedancia mecanica de radiación |
-| `Z_r(k0,Z0,a)` | Impedancia de radiación |
-| `Z_ab(Z0,k0,kc,lx,ly,lz,d,Zc=None,poro=False)` | Impedancia acústica de la caja |
-| `Z_e(w,Le,Re,BL,Z_MD,SD,Z_AB,Z_r)` | Impedancia electrica a partir de las otras impedancias |
+| `ZE(w,Re,Le,f_s,BL,RMS,QMS)` | Impedancia electrica a partir de parametros TS. |
+| `Z_MD(w,R_ms,M_md,C_ms)` | Impedancia mecanica de radiación. |
+| `Z_r(k0,Z0,a)` | Impedancia de radiación. |
+| `Z_ab(Z0,k0,kc,lx,ly,lz,d,Zc=None,poro=False)` | Impedancia acústica de la caja. |
+| `Z_e(w,Le,Re,BL,Z_MD,SD,Z_AB,Z_r)` | Impedancia electrica a partir de las otras impedancias. |
 
 
 | Otros | Descripción |
 |---------|-------------|
-| `u_hat_c(p_out6,Z_AB)` | Velocidad de volumen |
-| `u_hat_ref(w,eg,BL,Sd,Mms,Re)` | Velocidad de volumen referencial |
-| `p_hat(w,u_hat_c,Vb,r)` | Presion sonora en campo lejano a distancia r |
-| `Bl(Re,ws,Qes,Qms)` | Producto entre la densidad de flujo magnetico y la longitud del cable mediante parametros TS |
-| `a(Sd)` | Radio efectivo del diafragma |
-| `RMS(BL,QES,RE,QMS)` | Resistencia mecanica de la suspensión |
-| `MMD(MMS,a)` | Masa mecanica del diafragma |
-| `Vb(Vas,Qtc,Qts)` | Volumen de la caja |
-| `p_out(w,Sd,BL,Z_e,Z_MD,Z_ab,Z_r,r=1)` | Presión de salida de la caja acústica |
-| `NPS_pref(w,u_hat_ref,r=1,pref=20e-6)` | Nivel de presion sonora de referencia |
+| `u_hat_c(p_out6,Z_AB)` | Velocidad de volumen. |
+| `u_hat_ref(w,eg,BL,Sd,Mms,Re)` | Velocidad de volumen referencial. |
+| `p_hat(w,u_hat_c,Vb,r)` | Presion sonora en campo lejano a distancia `r`. |
+| `Bl(Re,ws,Qes,Qms)` | Producto entre la densidad de flujo magnetico y la longitud del cable mediante parametros TS. |
+| `a(Sd)` | Radio efectivo del diafragma. |
+| `RMS(BL,QES,RE,QMS)` | Resistencia mecanica de la suspensión. |
+| `MMD(MMS,a)` | Masa mecanica del diafragma. |
+| `Vb(Vas,Qtc,Qts)` | Volumen de la caja. |
+| `p_out(w,Sd,BL,Z_e,Z_MD,Z_ab,Z_r,r=1)` | Presión de salida de la caja acústica. |
+| `NPS_pref(w,u_hat_ref,r=1,pref=20e-6)` | Nivel de presion sonora de referencia. |
+
+### `JCAL`
+
+| Funcion | Descripción |
+|---------|-------------|
+| `X_Omega(w,X0,w_bar,M)` | Función de escalamiento. |
+| `kappa_omega(w,phi,kappa0,alpha,lambda_ups)` | Permeabilidad dinamica viscosa. |
+| `theta_omega(w,phi,theta0,lambda_t)` | Permeabilidad dinamica termica. |
+| `C_omega` | Compresibilidad efectiva dinamica. |
+| `Z_c(w,kappa_omega,C_omega)` | Impedancia caracteristica. |
+| `c_w(w,kappa_omega,C_omega` | Velocidad del sonido del material poroso. |
+| `k_c(w,c_w)` | Numero de onda en el material poroso. |
 
 ## Referencias Bibliograficas
 
