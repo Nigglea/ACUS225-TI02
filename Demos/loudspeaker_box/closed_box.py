@@ -6,11 +6,6 @@ from loudspeaker_box import utils
 
 ## Impedancias
 
-def Z_E(w,Re,Le):
-    ### impedancia de entrada o electrica ###
-    ### a partir de parametros TS ###
-    Z_E = Re+(w*Le*1.0j)
-    return Z_E
 def ZE(w,Re,Le,f_s,BL,RMS,QMS):
     ### impedancia de entrada o electrica ###
     ### a partir de parametros TS ###
@@ -55,9 +50,10 @@ def Z_ab(Z0,k0,kc,lx,ly,lz,d,Zc=None,poro=False):
         Z_ab = -np.divide(np.divide(Z0,lx*ly),np.tan(k0*(lz+d)))*1.0j
     return Z_ab
 
-def Z_e(Z_E,BL,Z_MD,SD,Z_AB,Z_r):
+def Z_e(w,Le,Re,BL,Z_MD,SD,Z_AB,Z_r):
     ### impedancia de la bobina ###
     ### a partir de la matriz de transferencia ###
+    Z_E = Re+(w*Le*1.0j) 
     div = Z_MD+(Z_AB+Z_r)*SD**2
     Z_e = Z_E + (BL**2)/div
     return Z_e
@@ -127,57 +123,3 @@ def NPS_pref(w,u_hat_ref,r=1,pref=20e-6):
     num = np.abs(-(1.j)*rho0*w*u_hat_ref*(np.exp(-1.j*k0*r)/(4*np.pi*r)))
     NPS_pref = 20*np.log10(num/pref)
     return NPS_pref
-
-## Matrices de transferencia
-
-def C(Z_e):
-    ### matriz de transferencia bobina ###
-    n=len(Z_e)
-    C = np.ones((2,2,n),dtype=np.complex)
-    C[0,1,:] = Z_e
-    C[1,0,:] = 0
-    return C,n
-
-def E(Bl,n):
-    ### matriz de transferencia transduccion electro-mecánica ###
-    E = np.zeros((2,2,n),dtype=np.complex)
-    E[0,1,:] = Bl
-    E[1,0,:] = 1/Bl
-    return E
-
-def D(Z_MD,n):
-    ### matriz de transferencia diafragma ###
-    D = np.ones((2,2,n),dtype=np.complex)
-    D[0,1,:] = Z_MD
-    D[1,0,:] = 0
-    return D
-
-def M(Sd,n):
-    ### matriz de transferencia transduccion mecano-acústica ###
-    M = np.zeros((2,2,n),dtype=np.complex)
-    M[0,0,:] = Sd
-    M[1,1,:] = 1/Sd
-    return M
-    
-def F(Zr,n):
-    ### matriz de transferencia radiacion del diafragma ###
-    F = np.ones((2,2,n),dtype=np.complex)
-    F[0,1,:] = Zr
-    F[1,0,:] = 0
-    return F
-
-def B(Z_ab,n):
-    ### matriz de transferencia cabinete ###
-    B = np.ones((2,2,n),dtype=np.complex)
-    B[0,1,:] = 0
-    B[1,0,:] = np.divide(1,Z_ab)
-    return B
-    
-def A(C,E,D,M,F,B):
-    ### matriz de transferencia caja cerrada ###
-    CE = np.einsum('ijn,jkn->ikn',C,E,dtype=np.complex)
-    CED = np.einsum('ijn,jkn->ikn',CE,D,dtype=np.complex)
-    CEDM = np.einsum('ijn,jkn->ikn',CED,M,dtype=np.complex)
-    CEDMF = np.einsum('ijn,jkn->ikn',CEDM,F,dtype=np.complex)
-    A=np.einsum('ijn,jkn->ikn',CEDMF,B,dtype=np.complex)
-    return A
